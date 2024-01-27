@@ -1,0 +1,262 @@
+@use "helpers/reset" as *;
+@use "helpers/variables" as *;
+@use "components/button" as *;
+@use "layout/header" as *;
+/** Banner **/
+main {
+  background: $theme-white;
+}
+.banner {
+  padding-top: 8rem;
+  position: relative;
+  height: 75rem;
+  background: linear-gradient(180deg, #03062f 0%, #180b74 100%);
+  &-content {
+    &Wrap {
+      display: flex;
+      align-items: center;
+    }
+    &-txtCol {
+      max-width: 42rem;
+      h1 {
+        color: $white;
+        letter-spacing: 0.04rem;
+        font: 600 4rem/5.3rem $font-semi;
+        margin-bottom: 2.4rem;
+      }
+      p {
+        max-width: 38rem;
+        margin-bottom: 3.2rem;
+        color: rgba(255, 255, 255, 0.7);
+        font: 400 1.8rem/2.8rem $font-reg;
+      }
+    }
+    &-sliderCol {
+      max-width: 39.3rem;
+      margin-left: 25.7rem;
+    }
+    &-sliderItem {
+      img {
+        max-width: 39.3rem;
+      }
+
+      .slick-dots li {
+        margin: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+        &:not(:last-child) {
+          margin-left: 0;
+          margin-right: 1.2rem;
+        }
+        button {
+          width: 1.2rem;
+          height: 1.2rem;
+          padding: 0;
+          &:before {
+            width: 1.2rem;
+            height: 1.2rem;
+            line-height: 1.6rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.4);
+          }
+        }
+        &.slick-active button:before {
+          opacity: 1;
+          color: $white;
+        }
+      }
+    }
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+  }
+  &::before {
+    background: $theme-white;
+    height: 18rem;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    transform: skewY(4.2deg);
+    transform-origin: top right;
+    bottom: -19rem;
+  }
+  &::after {
+    width: 16rem;
+    height: 16rem;
+    border-bottom: solid 8rem $theme-white;
+    border-right: solid 8rem $theme-white;
+    border-left: solid 80px transparent;
+    border-top: solid 8rem transparent;
+    right: 0;
+    bottom: -4rem;
+    background: #150a6b;
+  }
+}
+.dot-pattern {
+  position: absolute;
+  z-index: 1;
+  height: 14rem;
+  bottom: -7.5rem;
+}
+.contact {
+  margin-top: 16rem;
+  &-formWrap {
+    margin-bottom: 20.4rem;
+    max-width: 91rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6.4rem;
+    border-radius: 8px;
+    background: $white;
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1), 0px 23px 23px 0px rgba(0, 0, 0, 0.09), 0px 51px 31px 0px rgba(0, 0, 0, 0.05),
+      0px 91px 36px 0px rgba(0, 0, 0, 0.01), 0px 142px 40px 0px rgba(0, 0, 0, 0);
+    h2 {
+      color: $theme-black;
+      text-align: center;
+      font: 700 4rem/4.8rem $font-bold;
+      margin-bottom: 1.6rem;
+    }
+    p {
+      color: rgba(3, 6, 47, 0.7);
+      text-align: center;
+      font: 400 1.8rem/2.8rem $font-reg;
+      margin-bottom: 4.8rem;
+    }
+    form {
+      .cust-inputs {
+        margin-bottom: 2.4rem;
+        label {
+          color: $theme-black;
+          font: 400 1.6rem/2.4rem $font-reg;
+          margin-bottom: 0.8rem;
+          display: block;
+        }
+        input,
+        select,
+        textarea {
+          border-radius: 0.4rem;
+          border: 0.1rem solid rgba(0, 0, 0, 0.12);
+          background: $white;
+          padding: 1.2rem;
+          height: 4.8rem;
+          width: 100%;
+          font: 400 1.6rem/2.4rem $font-reg;
+        }
+        .nice-select {
+          padding: 1.2rem;
+          height: 4.8rem;
+          margin-bottom: 2.4rem;
+          .current {
+            font: 400 1.6rem/2.4rem $font-reg;
+          }
+          .list {
+            width: 100%;
+            li {
+              font: 400 1.6rem/2.4rem $font-reg;
+            }
+          }
+          .option {
+            line-height: 40px !important;
+          }
+        }
+        textarea {
+          resize: none;
+          min-height: 18rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1699px) {
+  .banner::before {
+    height: 16rem;
+    bottom: -16rem;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .banner-content-sliderCol {
+    margin-left: 12.5rem;
+  }
+  .banner::before {
+    bottom: -14rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  .banner-content-sliderCol {
+    margin-left: 12.5rem;
+  }
+  .banner::before {
+    bottom: -14rem;
+  }
+
+  .banner {
+    height: 100%;
+  }
+  .banner-contentWrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .dot-pattern {
+    display: none;
+  }
+  .banner-content-sliderItem img {
+    max-width: 34rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5.4rem;
+    margin-bottom: 10.4rem;
+  }
+  .banner-content-sliderCol {
+    margin-left: 0;
+  }
+  .banner-content-sliderCol .slick-dots {
+    bottom: 6.4rem;
+  }
+  .banner-content-txtCol {
+    max-width: 100%;
+  }
+  .banner-content-txtCol p {
+    max-width: 48rem;
+    margin-bottom: 3.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font: 400 1.8rem/2.8rem "Inter-Regular", sans-serif;
+  }
+  .banner {
+    padding-top: 12rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner::before {
+    bottom: -6rem;
+    height: 10rem;
+  }
+  .contact {
+    margin-top: 6rem;
+  }
+  .contact-formWrap {
+    padding: 4.8rem;
+  }
+}
+@media screen and (max-width: 575px) {
+  .banner-content-sliderCol {
+    max-width: 100%;
+  }
+  .banner-content-txtCol h1 {
+    font: 600 2.8rem/4rem $font-semi;
+  }
+  .banner-content-sliderItem img {
+    max-width: 30rem;
+  }
+  .banner-content-sliderCol .slick-dots {
+    z-index: 1;
+  }
+  .contact-formWrap {
+    padding: 3.2rem;
+  }
+  .contact-formWrap h2 {
+    font: 700 3.2rem/4rem $font-bold;
+  }
+}

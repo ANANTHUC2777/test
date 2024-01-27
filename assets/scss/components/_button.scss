@@ -1,0 +1,23 @@
+@use "../helpers/variables" as *;
+.signup__btn {
+  color: $white;
+  background: $theme-blue;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+  font: 700 1.5rem/2.4rem $font-bold;
+  transition: all 0.3s ease-in-out;
+  padding: 1.2rem 2rem;
+  border-radius: 0.4rem;
+  &:hover,
+  &:focus {
+    border: 1px solid $theme-blue;
+    color: $theme-blue;
+    background: transparent;
+  }
+}
+.submit__btn {
+  @extend .signup__btn;
+  margin-left: auto;
+  display: block;
+  margin-right: auto;
+}

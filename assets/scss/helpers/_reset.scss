@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5% !important;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+#return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #03062f;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 3.5rem;
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 9;
+  padding-top: 0.8rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  &:hover,
+  &:focus {
+    background: #2783f3;
+  }
+}
+.effect {
+  border-bottom: 1px solid #f1f5f9;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(180deg, #03062f 0%, #180b74 100%);
+}
+
+:focus-visible {
+  outline: none;
+}
+.nice-select:active,
+.nice-select.open,
+.nice-select:focus {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+@font-face {
+  font-family: "Inter-ExtraBold";
+  src: url("../fonts/Inter-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("../fonts/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("../fonts/Inter-SemiBold.ttf");
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 107.4rem !important;
+  }
+}
